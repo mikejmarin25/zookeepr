@@ -53,6 +53,14 @@ function findById(id, animalsArray) {
   return result;
 }
 
+function createNewAnimal(body, animalsArray) {
+  console.log(body);
+  // our function's main code will go here!
+
+  // return finished code to post route for response
+  return body;
+}
+
 
 app.get("/api/animals", (req, res) => {
   let results = animals;
@@ -83,6 +91,10 @@ app.post('/api/animals', (req, res) => {
   res.json(req.body);
 });
 
+// parse incoming string or array data
+app.use(express.urlencoded({ extended: true }));
+// parse incoming JSON data
+app.use(express.json());
 
 
 app.listen(PORT, () => {
